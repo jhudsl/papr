@@ -10,7 +10,7 @@ library(shiny)
 library(plotly)
 library(shinysense)
 
-source("google_api_info.R")
+source("helper_scripts/google_api_info.R")
 
 ## set some parameters
 level_up <- 4 #Number of papers needed to review to level up.
@@ -18,9 +18,9 @@ level_up <- 4 #Number of papers needed to review to level up.
 shinyServer(function(input, output, session) {
   
   ## load data
-  load("./biorxiv_data.Rda") #R dataset of paper info
-  load("./term_pca_df.Rda") #R dataset of paper PCA
-  token <- readRDS("./papr-drop.rds")
+  load("./data/biorxiv_data.Rda") #R dataset of paper info
+  load("./data/term_pca_df.Rda") #R dataset of paper PCA
+  token <- readRDS("./data/papr-drop.rds")
   twitter <- drop_read_csv("shiny/2016/papr/comb_dat/twitter.csv",
                            dtoken = token)
   
