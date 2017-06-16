@@ -1,0 +1,2 @@
+super secret docs on how to get the app running from a fresh clone. I always forget this. 
+
