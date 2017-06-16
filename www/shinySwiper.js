@@ -16,12 +16,20 @@ $(function() {
   );
 
   //a function to replace the value of the card
-  function set_card(title_text, abstract_text){
+  function set_card(title_text, abstract_text, link = ""){
       var swipeCard = $("#swipeCard");
       var title = $("#cardTitle");
       var abstract = $("#cardAbstract");
+      var card_body_text = 
+      `<p>
+         ${abstract_text}
+       </p>
+       <p align = "right"> 
+         <a href = ${link}>Full Paper</a>
+       </p>
+      `;
       title.text(title_text);
-      abstract.text(abstract_text);
+      abstract.html(card_body_text);
       //bring the card back to the middle.
       swipeCard.removeClass();
   }

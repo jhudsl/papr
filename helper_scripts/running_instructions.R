@@ -17,7 +17,7 @@ devtools::install_github("nstrayer/shinysense")
 devtools::install_github("MarkEdmondson1234/googleID")
 
 # Needs a file called google_api_info.R. 
-# THis has the info 
+# This file contains the following two lines: Just replace with your apis values. 
 # options("googleAuthR.webapp.client_id" = "Client_id")
 # options("googleAuthR.webapp.client_secret" = "Secret_id")
 

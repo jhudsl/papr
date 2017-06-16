@@ -134,15 +134,15 @@ shinyServer(function(input, output, session) {
       ## so that it will favor newer ones
       new_ind <- sample(vals$index, 1, prob = vals$issued)  
     } else if (runif(1) < .75 & !deciding) {
-      val <- get_recs(choice = choice)
+      val     <- get_recs(choice = choice)
       new_ind <- sample(val$index, 1, prob = val$issued)
-      rv$pc <- get_user_pc(choice = choice)
+      rv$pc   <- get_user_pc(choice = choice)
       print("using our sweet recommendor")
     } else {
       ## randomly grab a new paper but ignore the ones we've read
-      val <- vals[ - which(vals$index %in% isolate(rv$user_dat$index)), ]
+      val     <- vals[ - which(vals$index %in% isolate(rv$user_dat$index)), ]
       new_ind <- sample(val$index, 1, prob = val$issued) 
-      rv$pc <- get_user_pc(choice = choice)
+      rv$pc   <- get_user_pc(choice = choice)
     }
     ## make a new row for our session data.
     new_row <- data.frame(
